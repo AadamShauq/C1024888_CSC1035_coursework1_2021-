@@ -6,18 +6,26 @@ public class Branch {
         this.name = name;
     }
 
-    static void HighSale() {
+    static double HighSale() {
 
     }
 
-    static void AvgSale() {
-        for (Sale sale : branchsales) ;
-            if (sale.year == targetYear)
+    static double AvgSale(Integer targetYear) {
+        double total=0;
+        int count=0;
+        double averagePrice;
+
+        for (Sale sale : branchsales) {
+            if (sale.year == targetYear) {
                 total += sale.price;
-            averagePrice = (total / Sale.length)
+                count+=1;
+            }
+        }
+        averagePrice = (total / count);
+        return averagePrice;
     }
 
-    static void AllSalesHigh(){
+    static double AllSalesHigh(){
 
     }
 }
