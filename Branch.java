@@ -12,9 +12,9 @@ public class Branch {
 
     static void AvgSale() {
         for (Sale sale : branchsales) ;
-        if (sale.year == targetYear)
-            total += sale.price;
-        averagePrice = (total / Sale.length)
+            if (sale.year == targetYear)
+                total += sale.price;
+            averagePrice = (total / Sale.length)
     }
 
     static void AllSalesHigh(){
