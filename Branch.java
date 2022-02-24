@@ -6,8 +6,16 @@ public class Branch {
         this.name = name;
     }
 
-    static double HighSale() {
-
+    static Sale HighSale(double targetPrice) {
+        double highest=0;
+        Sale curSale=null;
+        for (Sale sale : branchSales) {
+            if (sale.price>highest) {
+                highest = sale.price;
+                curSale = sale;
+            }
+        }
+        return curSale;
     }
 
     static double AvgSale(Integer targetYear) {
@@ -15,7 +23,7 @@ public class Branch {
         int count=0;
         double averagePrice;
 
-        for (Sale sale : branchsales) {
+        for (Sale sale : branchSales) {
             if (sale.year == targetYear) {
                 total += sale.price;
                 count+=1;
