@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 public class Branch {
     public String name;
-    public ArrayList<Sale>branchSales;
+    public ArrayList<Sale>branchSales=new ArrayList<>();
 
     public Branch(String name) {
         this.name = name;
     }
 
-    static Sale HighSale() {
+    public Sale HighSale() {
         double highest=0;
         Sale curSale=null;
         for (Sale sale : branchSales) {
@@ -19,7 +19,7 @@ public class Branch {
         return curSale;
     }
 
-    static double AvgSale(Integer targetYear) {
+    public double AvgSale(int targetYear) {
         double total=0;
         int count=0;
         double averagePrice;
@@ -34,7 +34,7 @@ public class Branch {
         return averagePrice;
     }
 
-    static ArrayList<Sale> AllSalesHigh(double targetPrice){
+    public ArrayList<Sale> AllSalesHigh(double targetPrice){
         ArrayList<Sale> highSales=new ArrayList<>();
         for (Sale sale : branchSales) {
             if (sale.price>targetPrice) {
