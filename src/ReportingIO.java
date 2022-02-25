@@ -65,12 +65,16 @@ public class ReportingIO {
                     switch(choice)
                     {
                         case 1:
-
-
+                            System.in.println("Enter year: ");
+                            int year = Integer.parseInt(input.nextLine());
+                            reporting.BranchHighVal(year);
                         case 2:
                             reporting.HighSale();
 
                         case 3:
+                            System.in.println("Enter price you want to see above: ");
+                            double price = double.parsedouble(input.nextLine());
+                            reporting.AllBranchHigh(price);
                     }
 
 
