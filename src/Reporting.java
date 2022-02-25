@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * the largest sale value ever recorded
  * a list of all sales recorded by the branch with value greater than a given amount
  */
-public class Report {
+public class Reporting {
 
     public Branch name;
     public ArrayList<Branch>branchNames=new ArrayList<>();
