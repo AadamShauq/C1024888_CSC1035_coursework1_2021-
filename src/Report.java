@@ -1,8 +1,15 @@
 import java.util.ArrayList;
 
+/**
+ * This is a special class representing the Report object. It has methods
+ * relating to the branch with the largest average sale for a given year
+ * the largest sale value ever recorded
+ * a list of all sales recorded by the branch with value greater than a given amount
+ */
 public class Report {
 
     public Branch name;
+    public ArrayList<Branch>branchNames=new ArrayList<>();
 
     public double BranchHighVal(int targetYear) {
         double total = 0;
