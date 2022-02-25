@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * This is a special class representing the Branch object. It has methods
  * relating to the highest sale recorded by the branch
  * the average sale value recorded by the branch in a given year
- * a list of all sales recorded by the branch with  value greater than a given amount
+ *  a list of all sales recorded by the branch with  value greater than a given amount
  */
 
 public class Branch {
