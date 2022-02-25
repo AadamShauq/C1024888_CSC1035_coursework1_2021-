@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Report {
 
     public Branch name;
@@ -18,10 +20,10 @@ public class Report {
     }
 
     public Sale HighSale() {
-        double highest=0;
-        Sale curSale=null;
+        double highest = 0;
+        Sale curSale = null;
         for (Sale sale : branchSales) {
-            if (sale.price>highest) {
+            if (sale.price > highest) {
                 highest = sale.price;
                 curSale = sale;
             }
@@ -29,4 +31,13 @@ public class Report {
         return curSale;
     }
 
-    public
+    public ArrayList<Sale> AllBranchHigh(double targetPrice) {
+        ArrayList<Sale> highSales = new ArrayList<>();
+        for (Sale sale : branchSales) {
+            if (sale.price > targetPrice) {
+                highSales.add(sale);
+            }
+        }
+        return highSales;
+    }
+}
