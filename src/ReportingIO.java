@@ -55,6 +55,24 @@ public class ReportingIO {
                     }
 
                 case 3:
+                    System.out.println("================================");
+                    System.out.println("1. Branch with largest value from given year");
+                    System.out.println("2. Highest Sale ever recorded");
+                    System.out.println("3. All Sales with greater value than given amount");
+                    System.out.println("================================");
+                    choice=Integer.parseInt(input.nextLine());
+
+                    switch(choice)
+                    {
+                        case 1:
+
+
+                        case 2:
+                            reporting.HighSale();
+
+                        case 3:
+                    }
+
 
 
                 case 4:
