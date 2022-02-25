@@ -1,5 +1,11 @@
 import java.util.Scanner;
 
+/**
+ * This is a special class representing the ReportingIO class. It has a method
+ * relating to a menu which allows you to select your retrospective choice( Enter branch data, Sale date, then reporting stats) and
+ * methods are called accordingly. In the reporting stats case there is another switch case to that will pluck different stats and
+ * accordingly run the correct method in the Reporting Class.
+ */
 public class ReportingIO {
 
     public static void main(String [] args)
