@@ -11,28 +11,29 @@ public class Reporting {
     public Branch name;
     public ArrayList<Branch>branchNames=new ArrayList<>();
 
-    public double BranchHighVal(int targetYear) {
-        double total = 0;
-        int count = 0;
-        double branchVal = 0;
-
-        for (Sale sale : branchSales) {
-            if (sale.year == targetYear) {
-                total += sale.price;
-                count += 1;
-                branchVal = branch;
+    public Branch BranchHighVal(int targetYear) {
+        Branch curBranch=null;
+        double highest=-1;
+        double branchVal = -1;
+        for (Branch branch : branchNames) {
+            branchVal=branch.AvgSale(targetYear);
+            if (branchVal > highest) {
+                highest = branchVal;
+                curBranch = branch;
             }
         }
-        return branchVal;
+        return curBranch;
     }
 
     public Sale HighSale() {
-        double highest = 0;
-        Sale curSale = null;
-        for (Sale sale : branchSales) {
-            if (sale.price > highest) {
-                highest = sale.price;
-                curSale = sale;
+        Sale curSale=null;
+        double highest = -1;
+        Sale saleVal;
+        for (Branch branch : branchNames) {
+            saleVal = branch.HighSale();
+            if (saleVal.price > highest) {
+                highest = saleVal.price;
+                curSale = saleVal;
             }
         }
         return curSale;
@@ -40,10 +41,8 @@ public class Reporting {
 
     public ArrayList<Sale> AllBranchHigh(double targetPrice) {
         ArrayList<Sale> highSales = new ArrayList<>();
-        for (Sale sale : branchSales) {
-            if (sale.price > targetPrice) {
-                highSales.add(sale);
-            }
+        for (Branch branch : branchNames) {
+            highSales.addAll(branch.AllSalesHigh(targetPrice));
         }
         return highSales;
     }
