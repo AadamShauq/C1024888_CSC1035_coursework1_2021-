@@ -17,29 +17,45 @@ public class ReportingIO {
             System.out.println("================================");
             System.out.println("Enter a number 1 to 4");
             System.out.println("================================");
-            option=input.nextInt();
+            option=Integer.parseInt(input.nextLine());
 
             switch(option)
             {
                 case 1:
                     System.in.println("Enter Branch name: ");
-                    String branchName = input.nextline();
+                    String branchName = input.nextLine();
                     reporting.branchNames.add(new Branch(branchname));
 
                 case 2:
-                    System.in.println("Enter House Number: ");
-                    String saleHouseNumb = input.nextline();
-
-
-                    System.in.println("Enter : ");
-                    String saleHouseNumb = input.nextline();
+                    System.in.println("Enter Branch name: ");
+                    String name = input.nextLine();
 
                     System.in.println("Enter House Number: ");
-                    String saleHouseNumb = input.nextline();
+                    int saleHouseNumb = Integer.parseInt(input.nextLine());
 
-                    System.in.println("Enter House Number: ");
-                    String saleHouseNumb = input.nextline();
+                    System.in.println("Enter Postcode: ");
+                    String salePostcode = input.nextLine();
+
+                    System.in.println("Enter Month: ");
+                    int saleMonth = Integer.parseInt(input.nextLine());
+
+                    System.in.println("Enter Year: ");
+                    int saleYear = Integer.parseInt(input.nextLine());
+
+                    System.in.println("Enter Value: ");
+                    double saleValue = Double.parseDouble(input.nextLine());
+
+                    for (Branch branch : reporting.branchNames)
+                    {
+                        if (branch.name.equals(name))
+                        {
+                            branch.branchSales.add(new Sale(saleHouseNumb,salePostcode,saleMonth,saleYear,saleValue));
+                        }
+
+                    }
+
                 case 3:
+
 
                 case 4:
                     System.out.println("===========Quitting!============");
